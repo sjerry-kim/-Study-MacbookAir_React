@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <title>JSX문법실습</title>
+  <style>
+    .react-style{
+      background-color: black;
+      color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    function MyApp(){
+      const title = 'react';
+      const num1 = 1;
+      const num2 = 2;
+      const user = "도경수"
+      const login = 'true'
+      const content = "내용이 있습니다";
+      return(
+        <div>
+          {/*실습1. 함수에 return값을 수정해서 아래와 같이 출력하세요*/}
+          <h1>JSX로 접근하는 리액트</h1>
+          <p>먼저 하나의 태그로 감싸서 전체 내용을 출력합니다. 원하는 대로 html 내용을 작성할 수 있습니다</p>
+          <p>vue의 템플릿과 비슷합니다</p>
+
+          {/*실습2. 함수에 변수와 표현식을 추가하여, return 값을 수정하여 아래와 같이 출력하세요*/}
+          <h1>{title}에 자바스크립트를 추가해서 작성하고 있습니다</h1>
+          <p>1 + 2 = {num1 + num2}와 같은 연산도 계산할 수 있습니다</p>
+
+          {/*실습3. user값의 변화를 주는 삼항연산자를 작성하여 랜더하세요*/}
+          {
+            user == "김준면"? (
+              <h1>{user}입니다</h1>
+            ) : (
+              <h1>다른사람입니다</h1>
+            )
+          }
+
+          {/*실습4. const login = flase/true를 이용하여 랜더하세요 - 삼항연산자 사용*/}
+          {
+            login === "true"?(
+              <div>
+                <h2>로그인에 성공하였습니다</h2>
+                <p>{user}입니다</p>
+              </div>
+            ) : (
+              <div>
+                <h2>로그인이 필요합니다</h2>
+                <p>리액트를 시작하였습니다</p>
+              </div>
+            )
+          }
+
+          {/*실습5. const login = flase/true를 이용하여 랜더하세요 - && 연산자 사용*/}
+          {
+            login && ( //😞😞😞
+              <div>
+                <h2>로그인에 성공하였습니다</h2>
+                <p>{user}입니다</p>
+              </div>
+            )
+          }
+
+          { /*실습6. &&연산자를 사용해서 값이 있을 때와 없을 때를 출력하세요*/}
+          {
+            content && (
+              <h2>내용이 있습니다</h2>
+            )
+          }
+
+          { /*실습7. css파일을 따로 생성하여 css 스타일을 적용하세요*/}
+          <p className="react-style">react</p>
+
+        </div>
+      )
+    }
+
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(<MyApp />);
+  </script>
+</body>
+</html>
