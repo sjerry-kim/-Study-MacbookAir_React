@@ -3,6 +3,8 @@ import './App.css';
 import EventChangeComp from './components/EventChangeComp';
 import EventChangeFuncComp from './components/EventChangeFuncComp';
 import EventRefComp from './components/EventRefComp';
+import EventRefCompTest from './components/EventRefCompTest';
+import StoryBox from './components/StoryBox';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <EventChangeComp />
       <EventChangeFuncComp />
       <EventRefComp />
+      <EventRefCompTest />
+      <StoryBox />
     </div>
   );
 }
