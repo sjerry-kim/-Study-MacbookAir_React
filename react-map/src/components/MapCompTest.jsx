@@ -18,7 +18,7 @@ class MapCompTest extends Component {
     const nameLists = name.map((n,i)=>(
       <tr key={i}>
         <td>{i+1}</td>
-        <td onClick={() => {this.deleteName(i)}}> {/* <- 💔 동기식으로 실행 : 왜? */}
+        <td onClick={() => {this.deleteName(i)}}> {/* <- 💔 동기식으로 실행 : why? */}
           {n}
         </td>
       </tr>
