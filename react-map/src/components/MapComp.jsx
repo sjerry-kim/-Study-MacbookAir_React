@@ -23,7 +23,7 @@ class MapComp extends Component {
     this.changeInfo = (e) => {
       const newInfo = {
         ...this.state.inputInfo, // 이걸 굳이 왜 추가하는 거지...? -> 빈 객체가 있어야 값이 들어감..
-        [e.target.name] : e.target.value, // 이거만 있어도 되는 거 아닌가...? -> 응 아님
+        [e.target.name] : e.target.value, // 이거만 있어도 되는 거 아닌가...? -> 응 아님..
       }
       this.setState({inputInfo: newInfo})
     }
