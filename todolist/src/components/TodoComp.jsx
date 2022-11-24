@@ -23,8 +23,7 @@ function reducer(state, action){
       const checkedTodoLists = state.TodoLists.map((todo)=>{
         console.log(action.id, todo.id);
         return todo.id == action.id? {...todo, todoCheck: !todo.todoCheck,} : todo
-  })
-  console.log(checkedTodoLists)
+      });
       return {...state, TodoLists: checkedTodoLists}
     case "deleteTodo" :
       const deletedTodolists = state.TodoLists.filter((todo)=>(todo.id != action.id));
