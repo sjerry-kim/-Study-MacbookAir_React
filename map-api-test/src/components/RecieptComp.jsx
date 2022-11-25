@@ -4,14 +4,6 @@ import DataContext from "../context/DataContext";
 const RecieptComp = () => {
   const {state} = useContext(DataContext);
 
-  const showResult = () => {
-    state.result.map((r,i)=>(
-      <div key={i}>
-        <p>{r}</p>
-      </div>
-    ))
-  }
-
   return ( 
     <div className="reciept-comp-background">
       {
@@ -22,13 +14,14 @@ const RecieptComp = () => {
           </div>
         ))
       }
-    
+
       {
         state.result.map((r,i)=>(
           <div className="result-map" key={i}>
-            <p style={{margin: "0"}}>{r}</p>
+            <p style={{margin: "0"}}>{r.name}</p>
           </div>
         ))
+        
       }
     
     </div>
